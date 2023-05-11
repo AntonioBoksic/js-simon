@@ -3,14 +3,20 @@
 let elGameNumbers = document.querySelectorAll(".numero")
 console.log(elGameNumbers);
 
-// crea un array dove pushare i valori degli elementi HTML
-let gameNumbers = [];
 
-for ( i = 0 ; i < elGameNumbers.length ; i++) {
-    console.log(parseInt(elGameNumbers[i].innerHTML))
-    gameNumbers.push(parseInt(elGameNumbers[i].innerHTML))
-}
-console.log(gameNumbers);
+// crea un array dove pushare i valori degli elementi HTML
+let gameNumbers = (createNumRandomOrderArr(1,5));
+console.log(gameNumbers)
+
+//appendi i valori in HTML
+for ( i = 0 ; i < gameNumbers.length ; i++)
+elGameNumbers[i].append(gameNumbers[i])
+
+// for ( i = 0 ; i < elGameNumbers.length ; i++) {
+//     console.log(parseInt(elGameNumbers[i].innerHTML))
+//     gameNumbers.push(parseInt(elGameNumbers[i].innerHTML))
+// }
+// console.log(gameNumbers);
 
 //crea un array con numeri scelti dall'utente
 let userNumbers = [];
@@ -52,10 +58,10 @@ setTimeout(function() {
 // sostituisci contenuto elementi con un "?"
 function eliminateNumbers() {
    
-    for ( i = 0 ; i < elGameNumbers.length ; i++ ) {
+    for ( i = 0 ; i < gameNumbers.length ; i++ ) {
         console.log(i)
 
-        elGameNumbers[i].innerHTML = "?"
+        gameNumbers[i].innerHTML = "?"
     }
     
 }
@@ -63,7 +69,7 @@ function eliminateNumbers() {
 //chiedi n volte all utente di inserire un numero
 function askNumbers () {
 
-    for ( i = 0 ; i < elGameNumbers.length ; i++ ) {
+    for ( i = 0 ; i < gameNumbers.length ; i++ ) {
        let userNumber = parseInt(prompt("inserisci uno alla vota i numeri che hai visto")) 
        userNumbers.push(userNumber)
 
@@ -104,13 +110,6 @@ function RandomNumMinMax (numMin, numMax) {
     return Math.floor(Math.random() * (numMax - numMin + 1) + numMin)
 }
 
-
-
-
-
-
-
-
 // crea un array di numeri random che vanno da min a max
 function createNumRandomOrderArr (min, max) {
 
@@ -121,7 +120,7 @@ function createNumRandomOrderArr (min, max) {
     // finchè la lungheza dell'array è minore al "max" selezionato
     while (intArr.length < max) {
         // crea numero random tra min e numero quadrati
-        const nuovoNum = RandomNumMinMax(min, 100);
+        const nuovoNum = RandomNumMinMax(1, 100);
         // se il numero è presente nell'array non fare nulla
         if(intArr.includes(nuovoNum)){
         // se il numero NON è presente nell'array pushalo dentro 
