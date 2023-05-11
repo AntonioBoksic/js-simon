@@ -1,7 +1,10 @@
 
 // crea un array di elementi che si riferiscono ai 5 numeri
-let elNumbers = document.querySelectorAll(".numero")
-console.log(elNumbers)
+let elGameNumbers = document.querySelectorAll(".numero")
+console.log(elGameNumbers)
+
+//crea un array con numeri scelti dall'utente
+let UserNumbers = []
 
 // dopo 5000ms attiva funzione eliminateNumbers e poi askNumbers
 setTimeout(eliminateNumbers,5000)
@@ -17,19 +20,22 @@ setTimeout(function() {
 //********************* FUNCTIONS
 function eliminateNumbers() {
    
-    for ( i = 0 ; i < elNumbers.length ; i++ ) {
+    for ( i = 0 ; i < elGameNumbers.length ; i++ ) {
         console.log(i)
 
-        elNumbers[i].innerHTML = "?"
+        elGameNumbers[i].innerHTML = "?"
     }
     
 }
 
 function askNumbers () {
 
-    for ( i = 0 ; i < elNumbers.length ; i++ ) {
-        prompt("inserisci uno alla vota i numeri che hai visto")
+    for ( i = 0 ; i < elGameNumbers.length ; i++ ) {
+       let userNumber = prompt("inserisci uno alla vota i numeri che hai visto")
+       UserNumbers.push(userNumber)
 
     }
+
+    console.log(UserNumbers)
 
 }
