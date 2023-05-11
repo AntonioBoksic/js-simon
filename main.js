@@ -48,6 +48,8 @@ setTimeout(function() {
 
 
 //********************* FUNCTIONS
+
+// sostituisci contenuto elementi con un "?"
 function eliminateNumbers() {
    
     for ( i = 0 ; i < elGameNumbers.length ; i++ ) {
@@ -58,6 +60,7 @@ function eliminateNumbers() {
     
 }
 
+//chiedi n volte all utente di inserire un numero
 function askNumbers () {
 
     for ( i = 0 ; i < elGameNumbers.length ; i++ ) {
@@ -70,6 +73,7 @@ function askNumbers () {
 
 }
 
+//aggiungi 1 a variabile esterna se elemento i di array x è uguale a elemento i di array y
 function checkPoints() {
         for ( i = 0 ; i < gameNumbers.length; i++ ) {
        
@@ -81,6 +85,7 @@ function checkPoints() {
     console.log(`il tuo punteggio è ${points}`)
 }
 
+//pusha valore i in un array ogni volta che il numero i dell utente corrisponde al numero i dei numeri del gioco
 function givePositionRightNumbers() {
    
     for ( i = 0 ; i < gameNumbers.length; i++ ) {
@@ -91,10 +96,13 @@ function givePositionRightNumbers() {
     
     }
     console.log(positionRightNumbers)
-    console.log(`hai indovinato i numeri in posizione ${positionRightNumbers}`)
+    console.log(`hai indovinato i numeri in posizione: ${positionRightNumbers}`)
 }
 
-
+// crea numero random che vada da numMin a numMax
+function RandomNumMinMax (numMin, numMax) {
+    return Math.floor(Math.random() * (numMax - numMin + 1) + numMin)
+}
 
 
 
@@ -124,7 +132,4 @@ function createNumRandomOrderArr (min, max) {
     return intArr;
 }
 
-// crea numero random che vada da numMin a numMax
-function RandomNumMinMax (numMin, numMax) {
-    return Math.floor(Math.random() * (numMax - numMin + 1) + numMin)
- }
+
