@@ -61,7 +61,7 @@ function eliminateNumbers() {
     for ( i = 0 ; i < gameNumbers.length ; i++ ) {
         console.log(i)
 
-        gameNumbers[i].innerHTML = "?"
+        elGameNumbers[i].innerHTML = "?"
     }
     
 }
